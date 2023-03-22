@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.newTaskForm {
+  @apply w-4/5 mx-auto flex flex-col items-start bg-white drop-shadow rounded p-4;
+}
+
+.newTaskForm h2 {
+  @apply font-bold text-2xl mx-auto mb-4;
+}
+
+.NewTaskFieldContainer {
+  @apply flex flex-col items-start mb-4 w-full;
+}
+
+.newTaskForm label {
+  @apply font-bold;
+}
+
+.newTaskForm input,
+.categorySearch {
+  @apply border border-black w-full py-1 rounded-lg;
+}
+.newTaskForm select {
+  @apply w-full;
+}
+
+.newTaskForm option {
+  @apply w-full;
+}
+
+.newTaskForm button {
+  @apply bg-white border border-black hover:bg-black hover:text-white py-2 px-4 mx-auto mt-4 rounded-lg;
+}
+
+.active {
+  color: cornflowerblue;
+}
