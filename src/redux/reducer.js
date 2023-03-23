@@ -106,7 +106,6 @@ export function myReducer(state = initialState, action) {
     case DELETE_TASK:
       let copyTasks2 = [...state.tasks];
       let copyTasks3 = copyTasks2.filter((t) => t.task_id !== action.payload);
-      console.log(action.payload);
       writeToLs(copyTasks3);
       return {
         ...state,
@@ -121,7 +120,6 @@ export function myReducer(state = initialState, action) {
         categories: [...copyCategories2],
       };
     case EDIT_TASK:
-      console.log(action.payload);
       const copyTasks5 = [...state.tasks];
       const selectedTask3 = copyTasks5.filter(
         (t) => t.task_id == action.payload.id

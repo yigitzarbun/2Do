@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { editTask } from "./redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, addCategory } from "./redux/actions";
+import { getCategories, addCategory, deleteCategory } from "./redux/actions";
 
 function EditTask(props) {
   const { editTaskArea, setEditTaskArea, handleEditTaskArea, task } = props;
@@ -29,6 +29,7 @@ function EditTask(props) {
       ...data,
       task_id: task.task_id,
     };
+    dispatch(deleteCategory(task.category));
     dispatch(editTask({ id: task.task_id, data: dataWide }));
     reset();
     setEditTaskArea(false);

@@ -5,10 +5,11 @@ import {
   deleteTask,
   updateTaskPriority,
   deleteCategory,
+  getTasks,
 } from "./redux/actions";
-import { format, differenceInDays } from "date-fns";
 import { formatDistanceToNow } from "date-fns";
 import EditTask from "./EditTask";
+import { Link } from "react-router-dom";
 
 function Task(props) {
   const [updatePriorityArea, setUpdatePriorityArea] = useState(false);
@@ -23,8 +24,9 @@ function Task(props) {
     setUpdatePriorityArea(false);
   };
   const handleDelete = () => {
-    dispatch(deleteTask(task.task_id));
     dispatch(deleteCategory(task.category));
+    dispatch(deleteTask(task.task_id));
+    dispatch(getTasks());
   };
   const handlePriorityArea = () => {
     setUpdatePriorityArea(!updatePriorityArea);
@@ -149,6 +151,10 @@ function Task(props) {
               </p>
             </div>
           </div>
+          <Link to="/categories">
+            {" "}
+            <p className="flex text-xs italic">{task.category}</p>
+          </Link>
           <h2 className="flex mb-2 font-bold">{task.title}</h2>
           <p className="flex mb-4">{task.description}</p>
           <div className="flex" onClick={handleActions}>
@@ -182,7 +188,7 @@ function Task(props) {
           <div className="flex justify-between mt-8">
             {task.status == "to-do" && (
               <>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <img
                     className="w-6 h-6"
                     src="/images/right.png"
@@ -195,7 +201,7 @@ function Task(props) {
                     In Progress
                   </button>
                 </div>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <button
                     className="text-sm"
                     onClick={() => updateStatus("done")}
@@ -212,7 +218,7 @@ function Task(props) {
             )}
             {task.status == "in-progress" && (
               <>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <img
                     className="w-6 h-6"
                     src="/images/left.png"
@@ -225,7 +231,7 @@ function Task(props) {
                     To Do
                   </button>
                 </div>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <button
                     className="text-sm"
                     onClick={() => updateStatus("done")}
@@ -242,7 +248,7 @@ function Task(props) {
             )}
             {task.status == "done" && (
               <>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <img
                     className="w-6 h-6"
                     src="/images/left.png"
@@ -255,7 +261,7 @@ function Task(props) {
                     To Do
                   </button>
                 </div>
-                <div className="bg-slate-500 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
                   <button
                     className="text-sm"
                     onClick={() => updateStatus("in-progress")}
