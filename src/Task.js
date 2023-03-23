@@ -161,7 +161,7 @@ function Task(props) {
             {!actions ? (
               <div>
                 <img
-                  className="w-6 h-6 mt-4"
+                  className="w-6 h-6 mt-4 cursor-pointer"
                   src="/images/editing.png"
                   alt="edit"
                 />
@@ -170,7 +170,7 @@ function Task(props) {
               <div className="flex justify-between items-center mt-8 w-full">
                 <img className="w-6 h-6" src="/images/cross.png" alt="close" />
                 <p
-                  className="p-2 bg-black text-white rounded-md"
+                  className="p-2 bg-black text-white rounded-md cursor-pointer"
                   onClick={handleEditTaskArea}
                 >
                   Edit Task
@@ -178,7 +178,7 @@ function Task(props) {
                 <img
                   src="/images/delete.png"
                   alt="delete"
-                  className="w-6 h-6"
+                  className="w-6 h-6 cursor-pointer"
                   onClick={handleDelete}
                 />
               </div>

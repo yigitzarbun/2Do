@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Landing() {
   return (
-    <div>
+    <div className="text-center">
       <div className="mb-16">
         <img src="/images/landing.png" alt="hero" />
         <h1 className="text-4xl font-extrabold mb-4">Welcome to 2-Do</h1>
