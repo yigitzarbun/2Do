@@ -188,26 +188,22 @@ function Task(props) {
           <div className="flex justify-between mt-8">
             {task.status == "to-do" && (
               <>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div
+                  onClick={() => updateStatus("in-progress")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
                   <img
                     className="w-6 h-6"
                     src="/images/right.png"
                     alt="forward"
                   />
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("in-progress")}
-                  >
-                    In Progress
-                  </button>
+                  <button className="text-sm">In Progress</button>
                 </div>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("done")}
-                  >
-                    Done
-                  </button>
+                <div
+                  onClick={() => updateStatus("done")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
+                  <button className="text-sm">Done</button>
                   <img
                     className="w-6 h-6"
                     src="/images/right.png"
@@ -218,26 +214,22 @@ function Task(props) {
             )}
             {task.status == "in-progress" && (
               <>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div
+                  onClick={() => updateStatus("to-do")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
                   <img
                     className="w-6 h-6"
                     src="/images/left.png"
                     alt="backward"
                   />
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("to-do")}
-                  >
-                    To Do
-                  </button>
+                  <button className="text-sm">To Do</button>
                 </div>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("done")}
-                  >
-                    Done
-                  </button>
+                <div
+                  onClick={() => updateStatus("done")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
+                  <button className="text-sm">Done</button>
                   <img
                     className="w-6 h-6"
                     src="/images/right.png"
@@ -248,26 +240,22 @@ function Task(props) {
             )}
             {task.status == "done" && (
               <>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
+                <div
+                  onClick={() => updateStatus("to-do")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
                   <img
                     className="w-6 h-6"
                     src="/images/left.png"
                     alt="backward"
                   />
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("to-do")}
-                  >
-                    To Do
-                  </button>
+                  <button className="text-sm">To Do</button>
                 </div>
-                <div className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg">
-                  <button
-                    className="text-sm"
-                    onClick={() => updateStatus("in-progress")}
-                  >
-                    In Progress
-                  </button>
+                <div
+                  onClick={() => updateStatus("in-progress")}
+                  className="bg-slate-400 py-2 w-2/5 px-1 flex items-center justify-around shadow-md rounded-lg cursor-pointer"
+                >
+                  <button className="text-sm">In Progress</button>
                   <img
                     className="w-6 h-6"
                     src="/images/left.png"

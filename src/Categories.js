@@ -61,7 +61,7 @@ function Categories() {
             })
             .map((c) => (
               <p
-                className="border-1 bg-slate-300 shadow mt-2 p-4 w-3/4 mx-auto rounded"
+                className="border-1 bg-slate-300 shadow mt-2 p-4 w-3/4 mx-auto rounded cursor-pointer"
                 onClick={() => handleCategory(c)}
                 style={category == c ? activeCategory : {}}
               >
