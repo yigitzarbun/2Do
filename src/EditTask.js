@@ -55,7 +55,6 @@ function EditTask(props) {
         <div className="NewTaskFieldContainer">
           <label>Title</label>
           <input {...register("title", { required: "Title is required" })} />
-
           {errors.title && <span>{errors.title.message}</span>}
         </div>
         <div className="NewTaskFieldContainer">

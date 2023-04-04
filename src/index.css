@@ -48,7 +48,9 @@ code {
 .newTaskForm button {
   @apply bg-white border border-black hover:bg-black hover:text-white py-2 px-4 mx-auto mt-4 rounded-lg;
 }
-
+.newTaskForm span {
+  @apply text-red-700 text-sm;
+}
 .active {
   color: cornflowerblue;
 }

@@ -48,10 +48,10 @@ function Task(props) {
     <div>
       {!editTaskArea ? (
         <div className="w-full border p-4 rounded-lg bg-slate-300 shadow mt-4">
-          <div className="flex justify-between text-xs mb-2">
+          <div className="flex justify-between text-xs mb-2 ">
             {task.priority == "high" && updatePriorityArea == false && (
               <p
-                className="text-red-500 font-bold"
+                className="text-red-500 font-bold cursor-pointer"
                 onClick={handlePriorityArea}
               >
                 {task.priority}
@@ -60,19 +60,19 @@ function Task(props) {
             {task.priority == "high" && updatePriorityArea && (
               <div className="flex ">
                 <p
-                  className="text-red-500 mr-3 font-bold"
+                  className="text-red-500 mr-3 font-bold cursor-pointer"
                   onClick={handlePriorityArea}
                 >
                   {task.priority}
                 </p>
                 <p
-                  className="text-orange-400 mr-3 font-bold"
+                  className="text-orange-400 mr-3 font-bold cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("medium")}
                 >
                   medium
                 </p>
                 <p
-                  className="text-blue-500 font-bold"
+                  className="text-blue-500 font-bold cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("low")}
                 >
                   low
@@ -81,7 +81,7 @@ function Task(props) {
             )}
             {task.priority == "medium" && updatePriorityArea == false && (
               <p
-                className="text-orange-400 font-bold"
+                className="text-orange-400 font-bold cursor-pointer"
                 onClick={handlePriorityArea}
               >
                 {task.priority}
@@ -90,19 +90,19 @@ function Task(props) {
             {task.priority == "medium" && updatePriorityArea && (
               <div className="flex">
                 <p
-                  className="text-orange-400 font-bold mr-3"
+                  className="text-orange-400 font-bold mr-3 cursor-pointer"
                   onClick={handlePriorityArea}
                 >
                   {task.priority}
                 </p>
                 <p
-                  className="text-red-500 font-bold mr-3"
+                  className="text-red-500 font-bold mr-3 cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("high")}
                 >
                   high
                 </p>
                 <p
-                  className="text-blue-500 font-bold"
+                  className="text-blue-500 font-bold cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("low")}
                 >
                   low
@@ -111,7 +111,7 @@ function Task(props) {
             )}
             {task.priority == "low" && updatePriorityArea == false && (
               <p
-                className="text-blue-500 font-bold"
+                className="text-blue-500 font-bold cursor-pointer"
                 onClick={handlePriorityArea}
               >
                 {task.priority}
@@ -120,19 +120,19 @@ function Task(props) {
             {task.priority == "low" && updatePriorityArea && (
               <div className="flex">
                 <p
-                  className="text-blue-600 mr-3 font-bold"
+                  className="text-blue-600 mr-3 font-bold cursor-pointer"
                   onClick={handlePriorityArea}
                 >
                   {task.priority}
                 </p>
                 <p
-                  className="text-red-500 mr-3 font-bold"
+                  className="text-red-500 mr-3 font-bold cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("high")}
                 >
                   high
                 </p>
                 <p
-                  className="text-orange-400 font-bold"
+                  className="text-orange-400 font-bold cursor-pointer"
                   onClick={() => handleUpdateTaskPriority("medium")}
                 >
                   medium
